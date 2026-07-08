@@ -12,17 +12,21 @@
 
   <style>
 
+    * { box-sizing: border-box; }
+
     body {
 
       margin: 0;
 
       min-height: 100vh;
 
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-      background: #f7f7f7;
+      background:
 
-      color: #111;
+        radial-gradient(circle at top, #ffffff 0%, #f3f4f6 35%, #e5e7eb 100%);
+
+      color: #111827;
 
       display: flex;
 
@@ -30,61 +34,87 @@
 
       justify-content: center;
 
+      padding: 24px;
+
     }
 
     main {
 
+      width: 100%;
+
+      max-width: 420px;
+
       text-align: center;
 
-      padding: 2rem;
+    }
+
+    .card {
+
+      background: rgba(255, 255, 255, 0.78);
+
+      backdrop-filter: blur(16px);
+
+      border: 1px solid rgba(255, 255, 255, 0.7);
+
+      border-radius: 28px;
+
+      padding: 38px 28px;
+
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
 
     }
 
     h1 {
 
-      font-size: 2.4rem;
+      margin: 0;
 
-      margin-bottom: 0.4rem;
+      font-size: clamp(2.2rem, 8vw, 3.4rem);
 
-      font-weight: 600;
+      line-height: 1;
+
+      letter-spacing: -0.06em;
+
+      font-weight: 800;
 
     }
 
-    p {
+    .subtitle {
 
-      margin-bottom: 2rem;
+      margin: 14px 0 30px;
 
-      color: #555;
+      color: #6b7280;
+
+      font-size: 1rem;
 
     }
 
     nav {
 
-      display: flex;
+      display: grid;
 
-      flex-direction: column;
-
-      gap: 0.8rem;
-
-      min-width: 220px;
+      gap: 12px;
 
     }
 
     a {
 
+      display: block;
+
       text-decoration: none;
 
-      color: #111;
+      color: #111827;
 
-      border: 1px solid #ddd;
+      background: #ffffff;
 
-      border-radius: 999px;
+      border: 1px solid #e5e7eb;
 
-      padding: 0.8rem 1.2rem;
+      border-radius: 16px;
 
-      background: white;
+      padding: 15px 18px;
 
-      transition: 0.2s ease;
+      font-weight: 600;
+
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 
     }
 
@@ -92,17 +122,19 @@
 
       transform: translateY(-2px);
 
-      border-color: #111;
+      border-color: #111827;
+
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.10);
 
     }
 
     footer {
 
-      margin-top: 2rem;
+      margin-top: 22px;
+
+      color: #9ca3af;
 
       font-size: 0.85rem;
-
-      color: #888;
 
     }
 
@@ -114,13 +146,15 @@
 
   <main>
 
-    <h1>Ruben Fraga</h1>
+    <div class="card">
 
-    <p>Private Homepage</p>
+      <h1>Ruben Fraga</h1>
 
-    <nav>
+      <p class="subtitle">Private Homepage</p>
 
-      <a href="https://www.linkedin.com/in/ruben-fraga-b2b2753b1/" target="_blank">LinkedIn</a>
+      <nav>
+
+       <a href="https://www.linkedin.com/in/ruben-fraga-b2b2753b1/" target="_blank">LinkedIn</a>
 
       <a href="https://x.com/hqth1902" target="_blank">X</a>
 
@@ -130,16 +164,16 @@
 
       <a href="https://www.tiktok.com/@hqth1902" target="_blank">TikTok</a>
 
-    </nav>
+      </nav>
 
-    <footer>
+    </div>
 
-      © 2026 Ruben Fraga
-
-    </footer>
+    <footer>© 2026 Ruben Fraga</footer>
 
   </main>
 
 </body>
 
 </html>
+
+
