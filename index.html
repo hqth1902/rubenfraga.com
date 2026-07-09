@@ -1,179 +1,200 @@
-<!doctype html>
-
+  <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
-  <meta charset="utf-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Ruben Fraga</title>
-  
-  <style>
-
-    * { box-sizing: border-box; }
-
-    body {
-
-      margin: 0;
-
-      min-height: 100vh;
-
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-      background:
-
-        radial-gradient(circle at top, #1451ca 0%, #1451ca 35%, #1451ca 100%);
-
-      color: #111827;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 24px;
-
-    }
-
-    main {
-
-      width: 100%;
-
-      max-width: 420px;
-
-      text-align: center;
-
-    }
-
-    .card {
-
-      background: rgba(255, 255, 255, 0.78);
-
-      backdrop-filter: blur(16px);
-
-      border: 1px solid rgba(255, 255, 255, 0.7);
-
-      border-radius: 28px;
-
-      padding: 38px 28px;
-
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.12);
-
-    }
-
-    h1 {
-
-      margin: 0;
-
-      font-size: clamp(2.2rem, 8vw, 3.4rem);
-
-      line-height: 1;
-
-      letter-spacing: -0.06em;
-
-      font-weight: 800;
-
-    }
-
-    .subtitle {
-
-      margin: 14px 0 30px;
-
-      color: #6b7280;
-
-      font-size: 1rem;
-
-    }
-
-    nav {
-
-      display: grid;
-
-      gap: 12px;
-
-    }
-
-    a {
-
-      display: block;
-
-      text-decoration: none;
-
-      color: #111827;
-
-      background: #ffffff;
-
-      border: 1px solid #e5e7eb;
-
-      border-radius: 16px;
-
-      padding: 15px 18px;
-
-      font-weight: 600;
-
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-
-    }
-
-    a:hover {
-
-      transform: translateY(-2px);
-
-      border-color: #111827;
-
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.10);
-
-    }
-
-    footer {
-
-      margin-top: 22px;
-
-      color: #9ca3af;
-
-      font-size: 0.85rem;
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Ruben Fraga</title>
+<meta name="description" content="Ruben Fraga – Social-Media-Profile.">
+<meta property="og:title" content="Ruben Fraga">
+<meta property="og:description" content="Social-Media-Profile von Ruben Fraga.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#DEDBD5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23DEDBD5'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='46' text-anchor='middle' fill='%231B1A17'%3ERF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#DEDBD5;
+    --ink:#1B1A17;
+    --muted:#524F49;
+    --accent:#2540E6;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    min-height:100svh;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Mono',monospace;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow-x:hidden;
+  }
+  .noise{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:.05;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:9vh 1.5rem 4vh;
+    position:relative;
+    z-index:1;
+  }
+  h1.name{
+    margin:0;
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-size:clamp(3.2rem,13vw,8rem);
+    line-height:.95;
+    letter-spacing:-.02em;
+    display:flex;
+    flex-direction:column;
+    opacity:0;
+    transform:translateY(16px);
+    animation:rise .8s cubic-bezier(.16,1,.3,1) .05s forwards;
+  }
+  .name .w-bold{font-weight:700;}
+  .name .w-regular{font-weight:400;}
+
+  .signature{
+    width:min(260px,52vw);
+    margin:1rem auto 2.6rem;
+    overflow:visible;
+    display:block;
+  }
+  .signature path{
+    fill:none;
+    stroke:var(--accent);
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-dasharray:460;
+    stroke-dashoffset:460;
+    animation:draw 1.3s cubic-bezier(.65,.05,.36,1) .55s forwards;
+  }
+
+  nav.links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.5rem 1.8rem;
+    max-width:620px;
+    opacity:0;
+    transform:translateY(16px);
+    animation:rise .8s cubic-bezier(.16,1,.3,1) .95s forwards;
+  }
+  .link{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    padding:.55rem .1rem;
+    color:var(--ink);
+    text-decoration:none;
+    font-size:.95rem;
+    letter-spacing:.03em;
+  }
+  .link-label{position:relative;}
+  .link-label::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:-3px;
+    height:2px;
+    background:var(--accent);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .35s cubic-bezier(.65,.05,.36,1);
+  }
+  .link:hover .link-label::after,
+  .link:focus-visible .link-label::after{transform:scaleX(1);}
+  .link-arrow{
+    color:var(--accent);
+    font-size:.85em;
+    opacity:0;
+    transform:translate(-4px,4px);
+    transition:opacity .25s ease,transform .25s cubic-bezier(.65,.05,.36,1);
+  }
+  .link:hover .link-arrow,
+  .link:focus-visible .link-arrow{opacity:1;transform:translate(0,0);}
+  .link:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:6px;
+    border-radius:2px;
+  }
+
+  footer{
+    text-align:center;
+    padding:1.4rem 1rem 2rem;
+    font-size:.68rem;
+    letter-spacing:.04em;
+    color:var(--muted);
+    position:relative;
+    z-index:1;
+  }
+
+  @keyframes rise{to{opacity:1;transform:translateY(0);}}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  @media (prefers-reduced-motion:reduce){
+    h1.name,nav.links{animation:none;opacity:1;transform:none;}
+    .signature path{animation:none;stroke-dashoffset:0;}
+  }
+
+  @media (max-width:420px){
+    nav.links{gap:.4rem 1.2rem;font-size:.85rem;}
+  }
+</style>
 </head>
-
 <body>
+<div class="noise" aria-hidden="true"></div>
 
-  <main>
+<main>
+  <h1 class="name"><span class="w-bold">Ruben</span><span class="w-regular">Fraga</span></h1>
 
-    <div class="card">
+  <svg class="signature" viewBox="0 0 300 40" aria-hidden="true">
+    <path d="M8,24 C 55,6 95,34 148,20 C 190,8 225,28 292,10"/>
+  </svg>
 
-      <h1>Ruben Fraga</h1>
+  <nav class="links" aria-label="Social-Media-Profile">
+    <!-- LinkedIn – href unten mit eigenem Profil-Link ersetzen -->
+    <a class="link" href="https://www.linkedin.com/in/ruben-fraga-b2b2753b1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn-Profil von Ruben Fraga (öffnet in neuem Tab)">
+      <span class="link-label">LinkedIn</span><span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <!-- Instagram – href unten mit eigenem Profil-Link ersetzen -->
+    <a class="link" href="https://www.instagram.com/hqth1902/" target="_blank" rel="noopener noreferrer" aria-label="Instagram-Profil von Ruben Fraga (öffnet in neuem Tab)">
+      <span class="link-label">Instagram</span><span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <!-- X – href unten mit eigenem Profil-Link ersetzen -->
+    <a class="link" href="https://x.com/hqth1902" target="_blank" rel="noopener noreferrer" aria-label="X-Profil von Ruben Fraga (öffnet in neuem Tab)">
+      <span class="link-label">X</span><span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <!-- TikTok – href unten mit eigenem Profil-Link ersetzen -->
+    <a class="link" href="https://www.tiktok.com/@hqth1902" target="_blank" rel="noopener noreferrer" aria-label="TikTok-Profil von Ruben Fraga (öffnet in neuem Tab)">
+      <span class="link-label">TikTok</span><span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <!-- Reddit – href unten mit eigenem Profil-Link ersetzen -->
+    <a class="link" href="https://www.reddit.com/user/hqth1902/" target="_blank" rel="noopener noreferrer" aria-label="Reddit-Profil von Ruben Fraga (öffnet in neuem Tab)">
+      <span class="link-label">Reddit</span><span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+  </nav>
+</main>
 
-      <p class="subtitle"></p>
+<footer>© <span id="year"></span> Ruben Fraga</footer>
 
-      <nav>
-
-       <a href="https://www.linkedin.com/in/ruben-fraga-b2b2753b1/" target="_blank">LinkedIn</a>
-
-      <a href="https://x.com/hqth1902" target="_blank">X</a>
-
-      <a href="https://www.instagram.com/hqth1902/" target="_blank">Instagram</a>
-
-      <a href="https://www.reddit.com/user/hqth1902/" target="_blank">Reddit</a>
-
-      <a href="https://www.tiktok.com/@hqth1902" target="_blank">TikTok</a>
-
-      </nav>
-
-    </div>
-
-    <footer>© 2026 Ruben Fraga</footer>
-
-  </main>
-
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
-
 </html>
-
-
