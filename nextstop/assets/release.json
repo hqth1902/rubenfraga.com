@@ -1,0 +1,32 @@
+{
+  "product": "NextStop",
+  "version": "3.1.0",
+  "schemaVersion": 1,
+  "mac": {
+    "url": "/nextstop/downloads/files/NextStop-3.1.0.dmg",
+    "size": 1809718,
+    "sha256": "c1b4ad1fbd77b30771448b07e6621862969692a5cdfdbb6639f3396d13e0eca7"
+  },
+  "factory": {
+    "url": "/nextstop/downloads/files/NextStop-ESP32-C6-3.1.0-Factory.bin",
+    "size": 1717360,
+    "sha256": "e91a0f7412932d25181595e18d8ba2056b172340f25de15045204e8bd09ad41a",
+    "board": "firebeetle2-c6",
+    "chip": "ESP32-C6",
+    "address": 0
+  },
+  "bundle": {
+    "url": "/nextstop/downloads/files/NextStop-3.1.0-Bundle.zip",
+    "size": 11860151,
+    "sha256": "e68be253aba19be9f5c7825cb2331cdcd841eda7d1570aa4c7f567ec7bb5484c"
+  },
+  "licenses": {
+    "url": "/nextstop/downloads/files/Arduino-Relink-Kit.zip",
+    "size": 8149456,
+    "sha256": "c976b1d70552535068eecb478a068a7c342ba0b548b1c546ec9d8436bf96ec97"
+  },
+  "firmware": {
+    "url": "/nextstop/updates/esp32/latest.nextstop",
+    "version": "3.1.0"
+  }
+}
